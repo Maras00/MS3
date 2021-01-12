@@ -12,6 +12,34 @@
     <title>Cars Vintage</title>
 </head>
 <body>
+
+    <header>
+        <!-- navbar-->
+        <nav class="nav-extended text-shadow teal accent-4">
+            <div class="nav-wrapper">
+                <a href="{{ url_for('get_cars' )}}" class="brand-logo purple-text text-lighten-1">Vintage Cars</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="{{ url_for('get_cars' )}}">Home</a></li>
+                <li><a href="">New Cars</a></li>
+                <li><a href="">Manage Categories</a></li>
+                <li><a href="">Log Out</a></li>
+                <li><a href="">Log In</a></li>
+                <li><a href="">Register</a></li>
+            </ul>
+            </div>
+        </nav>
+        <!-- mobile sidebar-->
+        <ul class="sidenav" id="mobile-demo">
+            <li><h4 class="center-align teal-text text-darken-1">Vintage Cars</h4></li>
+            <li><a href="{{ url_for('get_cars' )}}">Home</a></li>
+            <li><a href="">New Cars</a></li>
+            <li><a href="">Manage Categories</a></li>
+            <li><a href="">Log Out</a></li>
+            <li><a href="">Log In</a></li>
+            <li><a href="">Register</a></li>
+        </ul>
+    </header>
     
     {% block content%}
     {% endblock %}
