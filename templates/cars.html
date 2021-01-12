@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars Vintage</title>
+</head>
+<body>
+    {% for car in cars %}
+        {{ car.car_name }}<br>
+        {{ car.category_name }}<br>
+        {{ car.car_model }}<br>
+        {{ car.car_year }}<br>
+        {{ car.car_fuel }}<br>
+    {% endfor %}
+    
+</body>
+</html>
