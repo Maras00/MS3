@@ -96,6 +96,27 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/add_car", methods=["GET", "POST"])
+def add_car():
+    if request.method == "POST":
+        car = {
+            "category_name": request.form.get("category_name"),
+            "car_name": request.form.get("car_name"),
+            "car_model": request.form.get("car_model"),
+            "car_year": request.form.get("car_year"),
+            "car_fuel": request.form.get("car_fuel"),
+            "created by": session["user"]
+        }
+        mongo.db.cars.insert_one(car)
+        flash("Your Car Is Successfully Added")
+        return redirect(url_for("get_cars"))
+
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template("add_car.html", username=username, categories=categories)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
