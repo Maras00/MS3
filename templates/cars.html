@@ -1,13 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    {% for car in cars %}
-        {{ car.car_name }}<br>
-        {{ car.category_name }}<br>
-        {{ car.car_model }}<br>
-        {{ car.car_year }}<br>
-        {{ car.car_fuel }}<br>
-    {% endfor %}   
-
+    
 <div class="col s12 m7">
     <h2 class="header purple-text text-lighten-1" style="font-size:3vw">Vintage Cars</h2>
     <div class="card horizontal teal lighten-4">
@@ -16,17 +9,58 @@
         </div>
         <div class="card-stacked">
             <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4" style="font-size:5vw">Sport<i class="material-icons right">Info</i></span>
+                <span class="card-title activator grey-text text-darken-4" style="font-size:5vw">Sport<i class="material-icons fas fa-info-circle right" style="font-size:3vw"></i></span>
             </div>
             <div class="card-action grey-text text-darken-4">
                 <a href="#">See Vintage Sport Cars</a>
             </div>
         </div> 
         <div class="card-reveal teal lighten-4">
-            <span class="card-title grey-text text-darken-4" style="font-size:5vw">Sport<i class="material-icons right">Close</i></span>
+            <span class="card-title grey-text text-darken-4" style="font-size:5vw">Sport<i class="material-icons fas fa-window-close right" style="font-size:3vw"></i></span>
             <p>A sports car is a car designed with an emphasis on dynamic performance, such as handling, acceleration, top speed, or thrill of driving. Sports cars originated in Europe in the early 1900s and are currently produced by many manufacturers around the world.</p>
         </div>
     </div>
 </div>
+
+<ul class="collection">
+    {% for car in cars %}
+
+        {% if car.category_name == "Sport" %}
+            <li class="collection-item">{{ car.car_name }} {{ car.car_model }} {{ car.car_year }} {{ car.car_fuel }}</li>
+        {% endif %}
+    
+    {% endfor %} 
+</ul>
+
+<div class="col s12 m7">
+    <h2 class="header purple-text text-lighten-1" style="font-size:3vw">Vintage Cars</h2>
+    <div class="card horizontal teal lighten-4">
+        <div class="card-image">
+            <img class="responsive-img" src="https://cdn.cheapism.com/images/070518_best_convertible_cars_slide_16_fs.max-784x410.jpg">
+        </div>
+        <div class="card-stacked">
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4" style="font-size:5vw">Cabrio<i class="material-icons fas fa-info-circle right" style="font-size:3vw"></i></span>
+            </div>
+            <div class="card-action grey-text text-darken-4">
+                <a href="#">See Vintage Sport Cars</a>
+            </div>
+        </div> 
+        <div class="card-reveal teal lighten-4">
+            <span class="card-title grey-text text-darken-4" style="font-size:5vw">Sport<i class="material-icons fas fa-window-close right" style="font-size:3vw"></i></span>
+            <p>A sports car is a car designed with an emphasis on dynamic performance, such as handling, acceleration, top speed, or thrill of driving. Sports cars originated in Europe in the early 1900s and are currently produced by many manufacturers around the world.</p>
+        </div>
+    </div>
+</div>
+
+<ul class="collection">
+    {% for car in cars %}
+    
+        {% if car.category_name == "Cabrio" %}
+            <li class="collection-item">{{ car.car_name }} {{ car.car_model }} {{ car.car_year }} {{ car.car_fuel }} {{ car.created_by }}</li>
+        {% endif %}
+
+    {% endfor %} 
+</ul>
 
 {% endblock %}

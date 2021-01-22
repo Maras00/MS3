@@ -15,11 +15,11 @@
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_car') }}">
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-folder-open prefix"></i>
+                    <i class="fas fa-folder-open red-text text-lighten-2 prefix"></i>
                     <select id="category_name" name="category_name" class="validate" required>
                         <option value="" disabled selected>Choose Category</option>
                         {% for category in categories %}
-                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                        <option value="{{ category.category_name }}">{{ category.category_name | capitalize }}</option>
                         {% endfor %}
                     </select>
                     <label class="blue-text text-darken-4" style="font-size: 16px" 
@@ -28,7 +28,7 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-car prefix"></i>
+                    <i class="fas fa-car red-text text-lighten-2 prefix"></i>
                     <input id="car_name" name="car_name" minlength="3" maxlength="50"
                         type="text" class="validate" required>
                     <label class="blue-text text-darken-4" style="font-size: 16px" 
@@ -37,7 +37,7 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-car-side prefix"></i>
+                    <i class="fas fa-car-side red-text text-lighten-2 prefix"></i>
                     <input id="car_model" name="car_model" minlength="3" maxlength="50"
                         type="text" class="validate" required>
                     <label class="blue-text text-darken-4" style="font-size: 16px" 
@@ -46,7 +46,7 @@
             </div>
             <div class="row">    
                 <div class="input-field col s12">
-                    <i class="fas fa-calendar-alt prefix"></i>
+                    <i class="fas fa-calendar-alt red-text text-lighten-2 prefix"></i>
                     <input id="car_year" name="car_year" minlength="4" maxlength="4" 
                         type="text" class="validate" required>
                     <label class="blue-text text-darken-4" style="font-size: 16px" 
@@ -55,7 +55,7 @@
             </div>
             <div class="row">    
                 <div class="input-field col s12">
-                    <i class="fas fa-gas-pump prefix"></i>
+                    <i class="fas fa-gas-pump red-text text-lighten-2 prefix"></i>
                     <input id="car_fuel" name="car_fuel" minlength="3" maxlength="50" 
                         type="text" class="validate" required>
                     <label class="blue-text text-darken-4" style="font-size: 16px" 

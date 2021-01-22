@@ -20,7 +20,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_cars")
 def get_cars():
-    cars = mongo.db.cars.find()
+    cars = list(mongo.db.cars.find())
     return render_template("cars.html", cars=cars)
 
 
@@ -101,11 +101,11 @@ def add_car():
     if request.method == "POST":
         car = {
             "category_name": request.form.get("category_name"),
-            "car_name": request.form.get("car_name"),
-            "car_model": request.form.get("car_model"),
+            "car_name": request.form.get("car_name").capitalize(),
+            "car_model": request.form.get("car_model").capitalize(),
             "car_year": request.form.get("car_year"),
-            "car_fuel": request.form.get("car_fuel"),
-            "created by": session["user"]
+            "car_fuel": request.form.get("car_fuel").capitalize(),
+            "created_by": session["user"].capitalize()
         }
         mongo.db.cars.insert_one(car)
         flash("Your Car Is Successfully Added")
