@@ -117,6 +117,32 @@ def add_car():
     return render_template("add_car.html", username=username, categories=categories)
 
 
+@app.route("/edit_car/<car_id>", methods=["GET", "POST"])
+def edit_car(car_id):
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "car_name": request.form.get("car_name").capitalize(),
+            "car_model": request.form.get("car_model").capitalize(),
+            "car_year": request.form.get("car_year"),
+            "car_fuel": request.form.get("car_fuel").capitalize(),
+            "created_by": session["user"].capitalize()
+        }
+        mongo.db.cars.update({"_id": ObjectId(car_id)}, submit)
+        flash("Task Successfully Updated")
+
+    car = mongo.db.cars.find_one({"_id": ObjectId(car_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("edit_car.html", car=car, categories=categories)
+
+
+@app.route("/delete_car/<car_id>")
+def delete_car(car_id):
+    mongo.db.cars.remove({"_id": ObjectId(car_id)})
+    flash("Car Successfully Deleted")
+    return redirect(url_for("get_cars"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

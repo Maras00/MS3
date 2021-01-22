@@ -11,4 +11,14 @@
         </div>
     </div>
 
+    <ul class="collection">
+    {% for car in cars %}
+
+        {% if car.category_name == "Sport" %}
+            <li class="collection-item">{{ car.car_name }} {{ car.car_model }} {{ car.car_year }} {{ car.car_fuel }}</li>
+        {% endif %}
+    
+    {% endfor %} 
+    </ul>   
+
 {% endblock %}
