@@ -17,9 +17,13 @@
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open red-text text-lighten-2 prefix"></i>
                     <select id="category_name" name="category_name" class="validate" required>
-                        <option value="" disabled selected>Choose Category</option>
+                        <option value="" disabled>Choose Category</option>
                         {% for category in categories %}
-                        <option value="{{ category.category_name }}">{{ category.category_name | capitalize }}</option>
+                            {% if category.category_name == car.category_name %}
+                                <option value="{{ category.category_name }}" selected>{{ category.category_name | capitalize }}</option>
+                            {% else %}
+                                <option value="{{ category.category_name }}">{{ category.category_name | capitalize }}</option>
+                            {% endif %}
                         {% endfor %}
                     </select>
                     <label class="blue-text text-darken-4" style="font-size: 16px" 
@@ -30,7 +34,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-car red-text text-lighten-2 prefix"></i>
                     <input id="car_name" name="car_name" minlength="3" maxlength="50"
-                        type="text" class="validate" required>
+                        value="{{ car.car_name }}" type="text" class="validate" required>
                     <label class="blue-text text-darken-4" style="font-size: 16px" 
                         for="car_name">Car Name</label>
                 </div>
@@ -39,7 +43,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-car-side red-text text-lighten-2 prefix"></i>
                     <input id="car_model" name="car_model" minlength="3" maxlength="50"
-                        type="text" class="validate" required>
+                        value="{{ car.car_model }}" type="text" class="validate" required>
                     <label class="blue-text text-darken-4" style="font-size: 16px" 
                         for="car_model">Car Model</label>
                 </div>
@@ -48,7 +52,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-calendar-alt red-text text-lighten-2 prefix"></i>
                     <input id="car_year" name="car_year" minlength="4" maxlength="4" 
-                        type="text" class="validate" required>
+                        value="{{ car.car_year }}" type="text" class="validate" required>
                     <label class="blue-text text-darken-4" style="font-size: 16px" 
                         for="car_year">Car Year</label>
                 </div>
@@ -57,7 +61,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-gas-pump red-text text-lighten-2 prefix"></i>
                     <input id="car_fuel" name="car_fuel" minlength="3" maxlength="50" 
-                        type="text" class="validate" required>
+                        value="{{ car.car_fuel }}" type="text" class="validate" required>
                     <label class="blue-text text-darken-4" style="font-size: 16px" 
                         for="car_fuel">Car Fuel</label>
                 </div>
@@ -67,6 +71,8 @@
                     <button type="submit" class="btn-large blue-text text-darken-4" style="font-size: 16px">
                         Edit Car<i class="fas fa-edit right"></i>
                     </button>
+                    <a href="{{ url_for('get_cars') }}" class="btn-large red">
+                        Cancel <i class="fas fa-times-circle"></i></a>
                 </div>
             </div>
         </form>

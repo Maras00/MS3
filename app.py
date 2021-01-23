@@ -44,6 +44,8 @@ def register():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
+        return redirect(url_for("profile", username=session["user"]))
+    
     return render_template("register.html")
 
 
@@ -129,7 +131,7 @@ def edit_car(car_id):
             "created_by": session["user"].capitalize()
         }
         mongo.db.cars.update({"_id": ObjectId(car_id)}, submit)
-        flash("Task Successfully Updated")
+        flash("Car Successfully Updated")
 
     car = mongo.db.cars.find_one({"_id": ObjectId(car_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
