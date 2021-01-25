@@ -18,3 +18,22 @@ body {
 .btn-small {
     margin: 5px;
 }
+
+.purple-text.text-lighten-1 {
+    color: #ab47bc !important;
+}
+
+a.brand-logo {
+    margin-left: 75px;
+}
+
+.carousel .carousel-item {
+    width: 400px;
+}
+
+@media only screen and (max-width: 992px) {
+    a.brand-logo {
+    margin-left: 15px;
+    left: 20%;
+}
+}
