@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $('.sidenav').sidenav({edge: "right"});
+    $('#modal1').modal();
     $('#carousel-auto').carousel();
         setInterval(function() {
     $('#carousel-auto').carousel('next');

@@ -44,7 +44,7 @@ def register():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
-        return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for("get_cars", username=session["user"]))
     
     return render_template("register.html")
 
@@ -83,9 +83,10 @@ def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    cars = list(mongo.db.cars.find())    
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("profile.html", username=username, cars=cars)
 
     return redirect(url_for("login"))
 
@@ -132,6 +133,7 @@ def edit_car(car_id):
         }
         mongo.db.cars.update({"_id": ObjectId(car_id)}, submit)
         flash("Car Successfully Updated")
+        return redirect(url_for("get_cars"))
 
     car = mongo.db.cars.find_one({"_id": ObjectId(car_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
