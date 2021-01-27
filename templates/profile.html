@@ -19,8 +19,8 @@
         <div class="collection teal purple-text text-darken-4" 
             style="border: 2px solid rgb(82, 82, 136); font-size:22px">
             <div class="col s9 left">
-                <strong>{{ car.car_name }}</strong>: {{ car.car_model }} 
-                {{ car.car_year }} {{ car.car_fuel }} {{ car.created_by }}
+                <strong>Make: {{ car.car_name }} Model: {{ car.car_model }}</strong><br>
+                <span>Year: {{ car.car_year }} Fuel: {{ car.car_fuel }} Created by: {{ car.created_by }}</span> 
             </div>
             <div class="col s3 right">
                     <a href="{{ url_for('edit_car', car_id=car._id ) }}" class="btn-small">Edit</a>

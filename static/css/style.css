@@ -6,6 +6,11 @@ body {
     color: #245079fd !important;
 }
 
+.collection {
+    border: 2px solid rgb(82, 82, 136);
+    font-size:18px;
+}
+
 /* -- Navbar -- */
  a.brand-logo{
       margin-left:75px;
@@ -16,7 +21,7 @@ body {
 }
 
 .btn-small {
-    margin: 5px;
+    margin: 10px;
 }
 
 .purple-text.text-lighten-1 {
@@ -36,9 +41,17 @@ a.brand-logo {
     width: 400px;
 }
 
+.card-panel {
+    padding-top: 10px;
+}
+
 @media only screen and (max-width: 992px) {
     a.brand-logo {
-    margin-left: 15px;
-    left: 20%;
+        margin-left: 15px;
+        left: 20%;
 }
+    .carousel .carousel-item>img {
+        width: 100%;
+        height: 100%;
+    }
 }

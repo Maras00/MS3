@@ -17,11 +17,14 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 @app.route("/")
 @app.route("/get_cars")
 def get_cars():
+    categories = list(mongo.db.categories.find().sort
+        ("category_name", 1))
     cars = list(mongo.db.cars.find())
-    return render_template("cars.html", cars=cars)
+    return render_template("cars.html", cars=cars, categories=categories)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -45,7 +48,7 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         return redirect(url_for("get_cars", username=session["user"]))
-    
+
     return render_template("register.html")
 
 
@@ -60,11 +63,11 @@ def login():
             # ensure hashed password matches user input
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
-                        session["user"] = request.form.get("username").lower()
-                        flash("Welcome, {}".format(
-                            request.form.get("username")))
-                        return redirect(url_for(
-                            "profile", username=session["user"]))
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(
+                    request.form.get("username")))
+                return redirect(url_for(
+                    "profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -83,7 +86,7 @@ def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    cars = list(mongo.db.cars.find())    
+    cars = list(mongo.db.cars.find())
 
     if session["user"]:
         return render_template("profile.html", username=username, cars=cars)
@@ -145,6 +148,15 @@ def delete_car(car_id):
     mongo.db.cars.remove({"_id": ObjectId(car_id)})
     flash("Car Successfully Deleted")
     return redirect(url_for("get_cars"))
+
+
+@app.route("/get_categories")
+def get_categories():
+    categories = list(mongo.db.categories.find().sort
+        ("category_name", 1))
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template("categories.html", categories=categories, username=username)
 
 
 if __name__ == "__main__":

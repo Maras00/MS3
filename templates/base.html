@@ -24,7 +24,9 @@
                 {% if session.user %}
                     <li><a class="teal-text text-accent-1" href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                     <li><a class="teal-text text-accent-1" href="{{ url_for('add_car' )}}">Add Car</a></li>
-                    <li><a class="teal-text text-accent-1" href="">Manage Categories</a></li>
+                    {% if session.user|lower == "admin"|lower %}
+                        <li><a class="teal-text text-accent-1" href="{{ url_for('get_categories' )}}">Categories</a></li>
+                    {% endif %}
                     <li><a class="teal-text text-accent-1" href="{{ url_for('logout' )}}">Log Out</a></li>
                 {% else %}
                     <li><a class="teal-text text-accent-1" href="{{ url_for('login' )}}">Log In</a></li>
@@ -44,7 +46,9 @@
             {% if session.user %}
                 <li><a class="waves-effect teal-text text-darken-1" href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a class="waves-effect teal-text text-darken-1" href="{{ url_for('add_car' )}}">Add Car</a></li>
-                <li><a class="waves-effect teal-text text-darken-1" href="">Manage Categories</a></li>
+                {% if session.user|lower == "admin"|lower %}
+                    <li><a class="waves-effect teal-text text-darken-1" href="{{ url_for('get_categories' )}}">Categories</a></li>
+                {% endif %}
                 <li><a class="waves-effect teal-text text-darken-1" href="{{ url_for('logout' )}}">Log Out</a></li>
             {% else %}
                 <li><a class="waves-effect teal-text text-darken-1" href="{{ url_for('login' )}}">Log In</a></li>
