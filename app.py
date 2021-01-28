@@ -27,6 +27,15 @@ def get_cars():
     return render_template("cars.html", cars=cars, categories=categories)
 
 
+@app.route("/search", methods = ["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    categories = list(mongo.db.categories.find().sort
+        ("category_name", 1))
+    cars = list(mongo.db.cars.find({"$text": {"$search": query}}))
+    return render_template("cars.html", cars=cars, categories=categories)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
