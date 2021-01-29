@@ -33,6 +33,11 @@ def search():
     categories = list(mongo.db.categories.find().sort
         ("category_name", 1))
     cars = list(mongo.db.cars.find({"$text": {"$search": query}}))
+    if cars:
+        flash("Your Car is Found")
+    else:
+        flash("No Results Found")
+
     return render_template("cars.html", cars=cars, categories=categories)
 
 
