@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="row">
+        <div class="col s12 m8 offset-m2">
+            <div class="card-panel teal lighten-4">
+                <h3 class="center-align light-blue-text text-darken 4">
+                    {{ username | capitalize }} Add Category
+                </h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="row card-panel teal lighten-4" style="border: 2px solid #2196f3">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_category') }}">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-folder-open red-text text-lighten-2 prefix"></i>
+                    <input id="category_name" name="category_name" minlength="3" maxlength="50"
+                        type="text" class="validate" required>
+                    <label class="blue-text text-darken-4" style="font-size: 16px" 
+                        for="category_name">Category Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-car-side red-text text-lighten-2 prefix"></i>
+                    <input id="category_image_url" name="category_image_url" minlength="8" maxlength="200"
+                        type="text" class="validate" required>
+                    <label class="blue-text text-darken-4" style="font-size: 16px" 
+                        for="category_image_url">Image url</label>
+                </div>
+            </div>
+            <div class="row">    
+                <div class="input-field col s12">
+                    <i class="fas fa-calendar-alt red-text text-lighten-2 prefix"></i>
+                    <textarea id="category_description" name="category_description" minlength="5" maxlength="1000" 
+                        type="text" class="validate" required></textarea>
+                    <label class="blue-text text-darken-4" style="font-size: 16px" 
+                        for="category_description">Category_description
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn-large blue-text text-darken-4" style="font-size: 16px">
+                        Add Category<i class="fas fa-plus-square right"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
