@@ -17,7 +17,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open red-text text-lighten-2 prefix"></i>
                     <input id="category_name" name="category_name" minlength="3" maxlength="50"
-                        type="text" class="validate" required>
+                        type="text" value="{{ category.category_name }}" class="validate" required>
                     <label class="blue-text text-darken-4" style="font-size: 16px" 
                         for="category_name">Category Name</label>
                 </div>
@@ -26,16 +26,17 @@
                 <div class="input-field col s12">
                     <i class="fas fa-car-side red-text text-lighten-2 prefix"></i>
                     <input id="category_image_url" name="category_image_url" minlength="5" maxlength="1000"
-                        type="text" class="validate" required>
+                        type="text" value="{{ category.category_image_url }}" class="validate" required>
                     <label class="blue-text text-darken-4" style="font-size: 16px" 
                         for="category_image_url">Image url</label>
                 </div>
             </div>
             <div class="row">    
                 <div class="input-field col s12">
-                    <i class="fas fa-calendar-alt red-text text-lighten-2 prefix"></i>
+                    <i class="fas fa-align-left red-text text-lighten-2 prefix"></i>
                     <textarea id="category_description" name="category_description" minlength="5" maxlength="5000" 
-                        type="text" class="validate" required></textarea>
+                        type="text"class="materialize-textarea validate" required>{{ category.category_description }}
+                    </textarea>
                     <label class="blue-text text-darken-4" style="font-size: 16px" 
                         for="category_description">Category_description
                     </label>

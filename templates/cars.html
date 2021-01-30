@@ -70,7 +70,7 @@
                 style="border: 2px solid rgb(82, 82, 136); font-size:22px">
                 <div class="col s9 left">
                     <strong>Make: {{ car.car_name }} Model: {{ car.car_model }}</strong><br>
-                    <span>Year: {{ car.car_year }} Fuel: {{ car.car_fuel }} Created by: {{ car.created_by }}</span>
+                    <p><em>Year:</em> {{ car.car_year }} <em>Fuel:</em> {{ car.car_fuel }} <em>Created by:</em> {{ car.created_by }}</p>
                 </div>
                 <div class="col s3 right">
                     {% if session.user|lower == car.created_by|lower %}

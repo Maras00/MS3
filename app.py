@@ -166,8 +166,7 @@ def delete_car(car_id):
 
 @app.route("/get_categories")
 def get_categories():
-    categories = list(mongo.db.categories.find().sort
-        ("category_name", 1))
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     return render_template("categories.html", categories=categories, username=username)
@@ -179,7 +178,7 @@ def add_category():
         category = {
             "category_name": request.form.get("category_name").capitalize(),
             "category_image_url": request.form.get("category_image_url"),
-            "category_description": request.form.get("category_description").capitalize(),
+            "category_description": request.form.get("category_description").capitalize()
         }
         mongo.db.categories.insert_one(category)
         flash("Your Category Is Successfully Added")
@@ -194,7 +193,7 @@ def edit_category(category_id):
         submit = {
             "category_name": request.form.get("category_name").capitalize(),
             "category_image_url": request.form.get("category_image_url"),
-            "category_description": request.form.get("category_description").capitalize(),
+            "category_description": request.form.get("category_description").capitalize()
         }
         mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
         flash("Your Category Is Successfully Update")
@@ -203,12 +202,12 @@ def edit_category(category_id):
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
     return render_template("edit_category.html", category=category)
 
+
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Your Category Is Successfully Deleted")
     return redirect(url_for("get_categories"))
-
 
 
 if __name__ == "__main__":
