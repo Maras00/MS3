@@ -21,17 +21,15 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_cars")
 def get_cars():
-    categories = list(mongo.db.categories.find().sort
-        ("category_name", 1))
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
     cars = list(mongo.db.cars.find())
     return render_template("cars.html", cars=cars, categories=categories)
 
 
-@app.route("/search", methods = ["GET", "POST"])
+@app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    categories = list(mongo.db.categories.find().sort
-        ("category_name", 1))
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
     cars = list(mongo.db.cars.find({"$text": {"$search": query}}))
     if cars:
         flash("Your Car is Found")
@@ -134,7 +132,8 @@ def add_car():
     categories = mongo.db.categories.find().sort("category_name", 1)
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    return render_template("add_car.html", username=username, categories=categories)
+    return render_template(
+        "add_car.html", username=username, categories=categories)
 
 
 @app.route("/edit_car/<car_id>", methods=["GET", "POST"])
@@ -169,16 +168,20 @@ def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    return render_template("categories.html", categories=categories, username=username)
+    return render_template(
+        "categories.html", categories=categories, username=username)
 
 
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
     if request.method == "POST":
         category = {
-            "category_name": request.form.get("category_name").capitalize(),
-            "category_image_url": request.form.get("category_image_url"),
-            "category_description": request.form.get("category_description").capitalize()
+            "category_name": request.form.get(
+                "category_name").capitalize(),
+            "category_image_url": request.form.get(
+                "category_image_url"),
+            "category_description": request.form.get(
+                "category_description").capitalize()
         }
         mongo.db.categories.insert_one(category)
         flash("Your Category Is Successfully Added")
@@ -191,9 +194,12 @@ def add_category():
 def edit_category(category_id):
     if request.method == "POST":
         submit = {
-            "category_name": request.form.get("category_name").capitalize(),
-            "category_image_url": request.form.get("category_image_url"),
-            "category_description": request.form.get("category_description").capitalize()
+            "category_name": request.form.get(
+                "category_name").capitalize(),
+            "category_image_url": request.form.get(
+                "category_image_url"),
+            "category_description": request.form.get(
+                "category_description").capitalize()
         }
         mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
         flash("Your Category Is Successfully Update")
