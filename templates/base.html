@@ -15,10 +15,10 @@
 
     <header>
         <!-- Navbar-->
-        <nav class="nav-extended text-shadow teal accent-4">
+        <nav class="nav-extended text-shadow teal darken-3">
             <div class="nav-wrapper">
                 <a href="{{ url_for('get_cars' )}}" class="brand-logo purple-text text-lighten-1">Vintage Cars</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars grey-text text-darken-4"></i></a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars teal-text text-accent-4"></i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a class="teal-text text-accent-1" href="{{ url_for('get_cars' )}}">Home</a></li>
                 {% if session.user %}
@@ -76,8 +76,8 @@
     </main>
 
         <footer>
-            <div class="footer-copyright text-shadow teal accent-4">
-                <div class="container center-align purple-text text-darken-1">
+            <div class="footer-copyright text-shadow teal darken-3">
+                <div class="container center-align purple-text text-lighten-1">
                     Copyright © Maras00 2021
                 </div>
             </div>
