@@ -10,6 +10,7 @@ This application was created for people who like vintage cars and would like to 
     - [**Existing Features**](#existing-features)
 
 3. [**Wireframes**](#wireframes)
+    - [**Database Schema**](#database)
 
 4. [**Technologies used**](#technologies-used)
     - [**Language**](#language)
@@ -138,6 +139,11 @@ The Categories page displays all categories that have been added by Admin. This 
 - [Wireframs Edit Car Page](/static/img/wireframe__edit_car_page.png)
 - [Wireframs Add Category Page](/static/img/wireframe__add_category_page.png)
 - [Wireframs Edit Category Page](/static/img/wireframe__edit_category_page.png)
+
+## Database
+
+- [Database Schema](/static/img/database.pdf)
+
 
 ##### Back to [Top](#table-of-contents)
 

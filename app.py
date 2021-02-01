@@ -123,6 +123,7 @@ def add_car():
             "car_model": request.form.get("car_model").capitalize(),
             "car_year": request.form.get("car_year"),
             "car_fuel": request.form.get("car_fuel").capitalize(),
+            "car_image_url": request.form.get("car_image_url"),
             "created_by": session["user"].capitalize()
         }
         mongo.db.cars.insert_one(car)
@@ -145,6 +146,7 @@ def edit_car(car_id):
             "car_model": request.form.get("car_model").capitalize(),
             "car_year": request.form.get("car_year"),
             "car_fuel": request.form.get("car_fuel").capitalize(),
+            "car_image_url": request.form.get("car_image_url"),
             "created_by": session["user"].capitalize()
         }
         mongo.db.cars.update({"_id": ObjectId(car_id)}, submit)

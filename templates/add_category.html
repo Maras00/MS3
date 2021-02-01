@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <!--Add categories top panel  -->
     <div class="row">
         <div class="col s12 m8 offset-m2">
             <div class="card-panel teal lighten-4">
@@ -10,9 +11,10 @@
             </div>
         </div>
     </div>
-
+    <!-- Add category card panel  -->
     <div class="row card-panel teal lighten-4" style="border: 2px solid #2196f3">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_category') }}">
+            <!-- Category name input field  -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open red-text text-lighten-2 prefix"></i>
@@ -22,15 +24,17 @@
                         for="category_name">Category Name</label>
                 </div>
             </div>
+            <!-- Image url input field  -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-car-side red-text text-lighten-2 prefix"></i>
                     <input id="category_image_url" name="category_image_url" minlength="8" maxlength="200"
-                        type="text" class="validate" required>
+                        type="image" class="validate" required>
                     <label class="blue-text text-darken-4" style="font-size: 16px" 
                         for="category_image_url">Image url</label>
                 </div>
             </div>
+            <!-- Category description input field  -->
             <div class="row">    
                 <div class="input-field col s12">
                     <i class="fas fa-calendar-alt red-text text-lighten-2 prefix"></i>
@@ -41,6 +45,7 @@
                     </label>
                 </div>
             </div>
+            <!-- Add category Submit or Cancel buttons  -->
             <div class="row">
                 <div class="col s12 center-align">
                     <button type="submit" class="btn-large blue-text text-darken-4" style="font-size: 16px">

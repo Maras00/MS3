@@ -5,10 +5,19 @@ body {
 .grey-text.text-darken-4 {
     color: #245079fd !important;
 }
-
+/*-- Car collection card --*/
 .collection {
     border: 2px solid rgb(82, 82, 136);
     font-size:18px;
+}
+
+.collection-text {
+    padding: 5px;
+    line-height: 1;
+}
+
+.collection-image {
+    padding:5px 5px 0px 5px;
 }
 
 /* -- Navbar -- */
@@ -24,6 +33,7 @@ body {
     margin: 10px;
 }
 
+/* -- Logo -- */
 .purple-text.text-lighten-1 {
     color: #ab47bc !important;
 }
@@ -32,6 +42,7 @@ a.brand-logo {
     margin-left: 75px;
 }
 
+/* -- Carousel Main Page  -- */
 .carousel .carousel-item>img {
     width: 100%;
     height: 100%;
@@ -41,6 +52,7 @@ a.brand-logo {
     width: 400px;
 }
 
+/* -- Search card -- */
 .card-panel {
     padding-top: 10px;
 }
@@ -49,9 +61,12 @@ a.brand-logo {
     a.brand-logo {
         margin-left: 15px;
         left: 20%;
-}
+    }
     .carousel .carousel-item>img {
         width: 100%;
         height: 100%;
+    }
+    .search-button {
+        size: 10px;
     }
 }
