@@ -28,7 +28,7 @@
                             {% endif %}
                         {% endfor %}
                     </select>
-                    <label class="blue-text text-darken-4" style="font-size: 16px" 
+                    <label class="blue-text text-darken-4" style="font-size: 20px" 
                         for="category_name">Edit Car</label>
                 </div>
             </div>
@@ -36,9 +36,9 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-car red-text text-lighten-2 prefix"></i>
-                    <input id="car_name" name="car_name" minlength="3" maxlength="50"
+                    <input id="car_name" name="car_name" minlength="2" maxlength="50"
                         value="{{ car.car_name }}" type="text" class="validate" required>
-                    <label class="blue-text text-darken-4" style="font-size: 16px" 
+                    <label class="blue-text text-darken-4" style="font-size: 20px" 
                         for="car_name">Car Name</label>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                     <i class="fas fa-car-side red-text text-lighten-2 prefix"></i>
                     <input id="car_model" name="car_model" minlength="1" maxlength="50"
                         value="{{ car.car_model }}" type="text" class="validate" required>
-                    <label class="blue-text text-darken-4" style="font-size: 16px" 
+                    <label class="blue-text text-darken-4" style="font-size: 20px" 
                         for="car_model">Car Model</label>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                     <i class="fas fa-calendar-alt red-text text-lighten-2 prefix"></i>
                     <input id="car_year" name="car_year" minlength="4" maxlength="4" 
                         value="{{ car.car_year }}" type="text" class="validate" required>
-                    <label class="blue-text text-darken-4" style="font-size: 16px" 
+                    <label class="blue-text text-darken-4" style="font-size: 20px" 
                         for="car_year">Car Year</label>
                 </div>
             </div>
@@ -68,7 +68,7 @@
                     <i class="fas fa-gas-pump red-text text-lighten-2 prefix"></i>
                     <input id="car_fuel" name="car_fuel" minlength="3" maxlength="50" 
                         value="{{ car.car_fuel }}" type="text" class="validate" required>
-                    <label class="blue-text text-darken-4" style="font-size: 16px" 
+                    <label class="blue-text text-darken-4" style="font-size: 20px" 
                         for="car_fuel">Car Fuel</label>
                 </div>
             </div>
@@ -78,14 +78,14 @@
                     <i class="fas fa-image red-text text-lighten-2 prefix"></i>
                     <input id="car_image_url" name="car_image_url" minlength="8" maxlength="1000" 
                         type="text" value="{{ car.car_image_url }}" class="validate" required>
-                    <label class="blue-text text-darken-4" style="font-size: 16px" 
+                    <label class="blue-text text-darken-4" style="font-size: 20px" 
                         for="car_image_url">Car Image URL</label>
                 </div>
             </div>
             <!-- Edit car button and Cancel button  -->
             <div class="row">
                 <div class="col s12 center-align">
-                    <button type="submit" class="btn-large blue-text text-darken-4" style="font-size: 16px">
+                    <button type="submit" class="btn-large blue-text text-darken-4">
                         Edit Car<i class="fas fa-edit right"></i>
                     </button>
                     <a href="{{ url_for('get_cars') }}" class="btn-large red blue-text text-darken-4"> 

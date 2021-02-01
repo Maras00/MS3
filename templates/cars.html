@@ -27,14 +27,13 @@
     <form action="{{ url_for('search') }}" method="post" class="col s12">
         <div class="row valign-wrapper center-aling">
             <div class="input-field col s12 m8">
-                <i class="fas fa-search grey-text text-darken-4 prefix"></i>
+                <i class="fas fa-search grey-text text-darken-4 prefix" style="font-size: 30px"></i>
                 <input type="text" name="query" id="query" class="validate" minlength="3" required>
                 <label for="query">Search Cars</label>
             </div>
-            <div class="col search-button s12 m4">
-                <a href="{{ url_for('get_cars') }}" class="red btn text-shadow">Reset</a>
-                <button type="submit" class="btn teal darken-4">
-                <i class="fas fa-search left"></i> Search
+            <div class="col s4 m3 btn-inline search-button ">
+                <a href="{{ url_for('get_cars') }}" class="red btn grey-text text-darken-4 text-shadow">Reset</a>
+                <button type="submit" class="btn red-text text-darken-4 teal darken-4"> Search
                 </button>
             </div>
         </div>
@@ -79,13 +78,13 @@
                                 src="{{ car.car_image_url }}">
                     </div>
                 </div>
-                <div class="collection-text col s6 left">
+                <div class="collection-text col s12 left">
                     <strong>Make: {{ car.car_name }} Model: {{ car.car_model }}</strong><br>
                     <p><em>Year:</em> {{ car.car_year }} <em>Fuel:</em> {{ car.car_fuel }}</p> 
                     <p></p><em>Created by:</em> {{ car.created_by }}</p>
                 </div>
                 <!-- Delete and Edit buttons -->
-                <div class="col s3 right">
+                <div class="col s12 collection-buttons right">
                     {% if session.user|lower == car.created_by|lower %}
                     <a href="{{ url_for('edit_car', car_id=car._id ) }}" class="btn-small grey-text text-darken-4">Edit</a>
                     <a href="#modal1" class="btn-small modal-trigger grey-text text-darken-4">Delete</a>
@@ -110,17 +109,4 @@
     </ul>
     {% endfor%}
 {% endif %}
-
-    <!-- Footer  -->
-    <footer>
-		<div class="container" id="footer">
-			<div class="row">
-				<div class="col s12 purple-text text-lighten-1 center">
-					<p class="copyright text-muted">Copyright &copy; Maras00 2021<span id="copyright"></span></p>
-				</div>
-			</div>
-		</div>
-    </footer>   
-
-
 {% endblock %}

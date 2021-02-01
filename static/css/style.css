@@ -1,6 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 body {
     background-color: #80cbc4;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: "Architects Daughter", sans-serif;
 }
+
+main {
+    flex: 1 0 auto;
+  }
+
 /* -- Main Page -- */
 .grey-text.text-darken-4 {
     color: #245079fd !important;
@@ -57,16 +67,57 @@ a.brand-logo {
     padding-top: 10px;
 }
 
+/* -- Footer -- */
+.footer-copyright {
+    padding: 10px;
+}
+
+@media only screen and (max-width: 1200px) {
+     /* -- Search buttons -- */
+    .btn-inline .btn {
+        width: 100%;
+    }
+}
+
 @media only screen and (max-width: 992px) {
+    /* -- Logo -- */
     a.brand-logo {
         margin-left: 15px;
         left: 20%;
     }
+    /* -- Carousel Main Page  -- */
     .carousel .carousel-item>img {
         width: 100%;
         height: 100%;
     }
-    .search-button {
-        size: 10px;
+    /* -- Search buttons -- */
+    .btn-inline .btn {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* -- Logo -- */
+    a.brand-logo {
+      margin-left: 35px;
+    }
+    /* -- Search buttons -- */
+    .btn-inline .btn {
+        width: 70px;
+        height: 30px;
+        font-size: 10px;
+    }
+    .search {
+       padding: 0; 
+    }
+    /* -- Carousel Main Page  -- */
+    .carousel .carousel-item>img {
+        width: 65%;
+        height: 100%;
+    }
+    /* -- Image on collection card  -- */
+    .collection-image .responsive-img {
+        width: 100% !important;
+        height: auto !important;
     }
 }
