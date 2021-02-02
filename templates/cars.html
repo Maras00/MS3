@@ -9,16 +9,16 @@
 <!-- Carousel Main Page  -->
 <div class="carousel center"  id="carousel-auto">
     <div class="carousel-item white-text" href="#one!">
-      <img src="https://cdn.thecoolist.com/wp-content/uploads/2017/02/Chevy-Camaro-1967-69-vintage-car-1095x542.jpg">
+      <img src="https://cdn.thecoolist.com/wp-content/uploads/2017/02/Chevy-Camaro-1967-69-vintage-car-1095x542.jpg" alt="Carousel car1">
     </div>
     <div class="carousel-item white-text" href="#two!">
-      <img src="https://www.kienle.com/fileadmin/_processed_/1/c/csm_faszination-oldtimer-header-xs_33e6719298.jpg">
+      <img src="https://www.kienle.com/fileadmin/_processed_/1/c/csm_faszination-oldtimer-header-xs_33e6719298.jpg" alt="Carousel car2">
     </div>
     <div class="carousel-item white-text" href="#three!">
-      <img src="https://chauffeursonline.ie/wp-content/uploads/2019/11/Beauford-ivory-and-black-2.jpg">
+      <img src="https://chauffeursonline.ie/wp-content/uploads/2019/11/Beauford-ivory-and-black-2.jpg" alt="Carousel car3">
     </div>
     <div class="carousel-item white-text" href="#four!">
-      <img src="https://coolmaterial.com/wp-content/uploads/2012/03/15-classic-cars-that-define-cool-hero-1000x600.jpg">
+      <img src="https://coolmaterial.com/wp-content/uploads/2012/03/15-classic-cars-that-define-cool-hero-1000x600.jpg" alt="Carousel car4">
     </div>
   </div>
 
@@ -28,7 +28,7 @@
         <div class="row valign-wrapper center-aling">
             <div class="input-field col s12 m8">
                 <i class="fas fa-search grey-text text-darken-4 prefix" style="font-size: 30px"></i>
-                <input type="text" name="query" id="query" class="validate" minlength="3" required>
+                <input type="text" name="query" id="query" class="validate" minlength="1" required>
                 <label for="query">Search Cars</label>
             </div>
             <div class="col s4 m3 btn-inline search-button ">
@@ -46,7 +46,7 @@
         <div class="card horizontal teal lighten-4">
             <div class="card-image">
                 <img class="responsive-img"  style="height: 150px; width: 200px"
-                    src="{{ category.category_image_url }}">
+                    src="{{ category.category_image_url }}"  alt="Category Image">
             </div>
             <!-- Category name on category card  -->
             <div class="card-stacked">
@@ -75,13 +75,13 @@
                     <div class="card-image collection-image">
                         <img class="responsive-img"
                             style="height: 100px; width: 150px; border: 1px solid rgb(82, 82, 136)"
-                                src="{{ car.car_image_url }}">
+                                src="{{ car.car_image_url }}" alt="Car Image">
                     </div>
                 </div>
                 <div class="collection-text col s12 left">
-                    <strong>Make: {{ car.car_name }} Model: {{ car.car_model }}</strong><br>
-                    <p><em>Year:</em> {{ car.car_year }} <em>Fuel:</em> {{ car.car_fuel }}</p> 
-                    <p></p><em>Created by:</em> {{ car.created_by }}</p>
+                    <strong><em class="teal-text text-accent-4">Make:</em> {{ car.car_name }} <em class="teal-text text-accent-4">Model:</em> {{ car.car_model }}</strong><br>
+                    <p><em class="teal-text text-accent-4">Year:</em> {{ car.car_year }} <em class="teal-text text-accent-4">Fuel:</em> {{ car.car_fuel }}</p> 
+                    <p><em class="teal-text text-accent-4">Created by:</em> {{ car.created_by }}</p>
                 </div>
                 <!-- Delete and Edit buttons -->
                 <div class="col s12 collection-buttons right">

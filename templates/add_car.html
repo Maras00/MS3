@@ -19,7 +19,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open red-text text-lighten-2 prefix"></i>
                     <select id="category_name" name="category_name" class="validate" required>
-                        <option value="" selected>Choose Category</option>
+                        <option value="" disabled selected>Choose Category</option>
                         {% for category in categories %}
                         <option value="{{ category.category_name }}">{{ category.category_name | capitalize }}</option>
                         {% endfor %}

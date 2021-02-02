@@ -17,6 +17,7 @@
         {% if session.user|lower == car.created_by|lower %}
         <li>
         <!-- Car collection card  -->
+        <h2 class="header purple-text text-lighten-1" style="font-size:2vw">{{ car.category_name  | capitalize }}</h2>
         <div class="collection teal purple-text text-darken-4" 
                 style="border: 2px solid rgb(82, 82, 136); font-size:16px">
                 <div class="col s3 left">
@@ -27,9 +28,9 @@
                     </div>
                 </div>
                 <div class="collection-text col s6 left">
-                    <strong>Make: {{ car.car_name }} Model: {{ car.car_model }}</strong><br>
-                    <p><em>Year:</em> {{ car.car_year }} <em>Fuel:</em> {{ car.car_fuel }}</p> 
-                    <p></p><em>Created by:</em> {{ car.created_by }}</p>
+                    <strong><em class="teal-text text-accent-4">Make:</em> {{ car.car_name }} <em class="teal-text text-accent-4">Model:</em> {{ car.car_model }}</strong><br>
+                    <p><em class="teal-text text-accent-4">Year:</em> {{ car.car_year }} <em class="teal-text text-accent-4">Fuel:</em> {{ car.car_fuel }}</p> 
+                    <p><em class="teal-text text-accent-4">Created by:</em> {{ car.created_by }}</p>
                 </div>
             <!-- Delete and Edit buttons -->       
             <div class="col s3 right">
