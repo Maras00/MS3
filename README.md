@@ -5,8 +5,11 @@ This application was created for people who like vintage cars and would like to 
 ******************************************************************************************************
 ## Table of Contents
 1. [**UX**](#ux)
+    - [**User Stories**](#user-stories)
+    - [**Design Choices**](#design-choices)
 
 2. [**Features**](#features)
+    - [**Functionality**](#functionality)
     - [**Existing Features**](#existing-features)
 
 3. [**Wireframes**](#wireframes)
@@ -16,11 +19,15 @@ This application was created for people who like vintage cars and would like to 
     - [**Language**](#language)
     - [**Tools Used**](#tools-used)
 
-4. [**Testing**](#testing)
+5. [**Testing**](#testing)
+    - [**Testing User Stories**](#testing-user-stories)
+    - [**Responsive Testing**](#responsive-testing)
+    - [**Functional Testing**](#functional-testing)
+    - [**Code Validation**](#code-validation)
 
-5. [**Deployment**](#deployment)
+6. [**Deployment**](#deployment)
 
-6. [**Credits**](#credits)
+7. [**Credits**](#credits)
     - [**Media**](#media)
     - [**Acknowledgments**](#acknowledgments)
 
@@ -39,16 +46,43 @@ This was developed as both a front-end and backend project. The technologies use
 
 ## UX
 
+### User Stories
+
 The following user stories have been identified:
 
 1. As a user, I want the home screen to be visually appealing and easy to navigate.
 2. As a user, I want to be able to start register easily.
 2. As a user, I want to be able to start login and logout easily.
-3. As a user, I want to be able to add my car.
-7. As a user, I want to be able to edit my car.
-4. As a user, I want to be able to delete my car.
-5. As a user, I want to be able to search car.
+3. As a user, I want to be able to add a car.
+7. As a user, I want to be able to edit a car.
+4. As a user, I want to be able to delete a car.
+5. As a user, I want to be able to search to find the exact car.
 6. As a user, I want to be able to access this website from different devices easily.
+
+### Design Choices
+
+#### Fonts
+
+- The font that was chosen for this page is "Architects Daughter". Its appearance fits into the vintage style of the site.
+
+#### Colours
+
+- The colours that was chosen for this page are:
+    
+    - #80cbc4 - body background
+    - purple - logo
+    - teal - car card, navbar
+    - gray - category card
+    - blue - text login, register and flash messages 
+    - #245079fd - card title, icon and buttons
+    - rgb(82, 82, 136) - car card border
+    - rgba(40, 47, 49, 0.8) - text shadow on navbar and footer
+
+Colors are used in different shades of darkness and accents from Materialize colours.
+
+#### Styling
+
+- The website has been designed to be clear, easy to use and adapted to UI and UX patterns. The site should not be a problem for the user as it is designed in an easy to navigate style. The selected color palette is eye-catching and color-matched to avoid overwhelming the intensity of the shades.
 
 ##### Back to [Top](#table-of-contents)
 
@@ -99,7 +133,7 @@ The following are the nav bar links when a user is logged in:
 - Add Car
 - LogOut
 
-As a Admin you can create, read, edit and delete Categories.
+As a Admin you can create, read, edit and delete Categories and Cars.
 
 **Home Page** 
 
@@ -165,9 +199,25 @@ The Categories page displays all categories that have been added by Admin. This 
 - Heroku - used to host the app.
 - Font Awesome - to style the website icons.
 
+##### Back to [Top](#table-of-contents)
+
 ## Testing
 
-The project was tested on development tools in Google Chrome and the responsiveness of mobile devices and Ipads was also tested.
+### Testing User Stories
+
+Testing user stories:
+
+- Create a new account(Register)
+- Login to user account
+- Logout from user account
+- Use navbar links to move in to different pages(Home, Profile and Add Car)
+- Create new car card
+- Read car card
+- Edit car card
+- Delete car card  
+
+### Responsive Testing
+The project was tested on development tools in Google Chrome, Microsoft Edge and the responsiveness of mobile devices and Ipads was also tested.
 
 - Moto G4
 - Galaxy S5
@@ -182,17 +232,29 @@ The project was tested on development tools in Google Chrome and the responsiven
 - Surface Duo 
 - Galaxy Fold 
 
-The first of the testing steps was on W3C Markup Validation and W3C CSS validation with no errors found.
+1. Testing was done on a http://ami.responsivedesign.is/, which has been used to see how the site performs on different devices and their viewports. All pages, links, icons performed as expected on all devices. I also used it to create the all-devices.jpg at the top of this Readme file.
 
-The second testing step was http://ami.responsivedesign.is/, which has been used to see how the site performs on different devices and their viewports. All pages, links, icons performed as expected on all devices. I also used it to create the all-devices.jpg at the top of this Readme file.
+2. Testing was done on my apps responiveness in Chrome and Microsoft Edge on different size mobile, tablet and Desktop to ensure that the responiveness worked and the site is funcitonal at all sizes.
+    - Tested on Desktop (My Pc)
+    - Tested on Tablet (Ipad 7, Samsung Galaxy 7)
+    - Tested on Mobile ( Iphone 7, Samsung A20)
 
-The third step was testing by the Slack community, my mentor from the Code Institute and my friends and family.
+3. Testing was done by the Slack community, my mentor from the Code Institute and my friends and family.
 
 Testing consists of finding any errors that could reveal incorrect operation of the website during its use. The website was also tested on private mobile devices like Iphone 7, Samsung A20 and Ipad 7.
 
 All problems related to the functioning of the site have been resolved.
 
-##### Back to [Top](#table-of-contents)
+### Functional Testing
+
+In the functionality test, I check that all elements are working properly:
+
+- Logo link
+- Navbar Links
+- Search Panel
+- Cards information after reveal
+- Buttons  
+- Flash messages
 
 ### Code Validation
 
@@ -201,6 +263,7 @@ All problems related to the functioning of the site have been resolved.
 - I used the [JSHint Validator tool](https://jshint.com/) to validate my JavaScript syntax.
 - I used the [Pep8 Online tool](http://pep8online.com/) to validate my Python syntax.
 
+##### Back to [Top](#table-of-contents)
 
 ## Deployment
 
