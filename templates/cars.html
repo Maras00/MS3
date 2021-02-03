@@ -85,7 +85,7 @@
                 </div>
                 <!-- Delete and Edit buttons -->
                 <div class="col s12 collection-buttons right">
-                    {% if session.user|lower == car.created_by|lower %}
+                    {% if session.user|lower == car.created_by|lower or session.user|lower == "admin"|lower  %}
                     <a href="{{ url_for('edit_car', car_id=car._id ) }}" class="btn-small grey-text text-darken-4">Edit</a>
                     <a href="#modal1" class="btn-small modal-trigger grey-text text-darken-4">Delete</a>
                     <!-- Deleting alert   -->
