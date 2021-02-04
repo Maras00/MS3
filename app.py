@@ -160,7 +160,6 @@ def edit_car(car_id):
 
 @app.route("/delete_car/<car_id>")
 def delete_car(car_id):
-    print(car_id)
     mongo.db.cars.remove({"_id": ObjectId(car_id)})
     flash("Car Successfully Deleted")
     return redirect(url_for("get_cars"))

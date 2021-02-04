@@ -35,19 +35,19 @@
             <!-- Delete and Edit buttons -->       
             <div class="col s3 right">
                 <a href="{{ url_for('edit_car', car_id=car._id ) }}" class="btn-small grey-text text-darken-4">Edit</a>
-                <a href="#modal1" class="btn-small modal-trigger grey-text text-darken-4">Delete</a>
-                    <!-- Deleting alert  -->
-                    <div id="modal1" class="modal teal lighten-4">
-                        <div class="modal-content">
-                            <h4>Deleting Car</h4>
-                            <p>Are you sure, you want to delete this car?</p>
-                        </div>
-                        <!-- Delete and Cancel buttons -->
-                        <div class="modal-footer teal lighten-4">
-                            <a href="{{ url_for('profile', username=session['user']) }}" class="modal-action waves-effect red darken-4 btn ">Cancel</a>
-                            <a href="{{ url_for('delete_car', car_id=car._id ) }}" class="modal-action waves-effect waves-green btn ">Delete</a>
-                        </div>
+                <button data-target="#modal1{{ car._id }}" class="btn-small modal-trigger grey-text text-darken-4">Delete</button>
+                <!-- Deleting alert  -->
+                <div id="#modal1{{ car._id }}" class="modal teal lighten-4">
+                    <div class="modal-content">
+                        <h4>Deleting Car</h4>
+                        <p>Are you sure, you want to delete this car {{ car.car_name }} {{ car.car_model }}?</p>
                     </div>
+                    <!-- Delete and Cancel buttons -->
+                    <div class="modal-footer teal lighten-4">
+                        <a href="{{ url_for('profile', username=session['user']) }}" class="modal-action waves-effect red darken-4 btn ">Cancel</a>
+                        <a href="{{ url_for('delete_car', car_id=car._id ) }}" class="modal-action waves-effect waves-green btn ">Delete</a>
+                    </div>
+                </div>
             </div>
         </div>
         </li>
