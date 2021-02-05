@@ -21,7 +21,7 @@
                     <select id="category_name" name="category_name" class="validate" required>
                         <option value="" disabled selected>Choose Category</option>
                         {% for category in categories %}
-                        <option value="{{ category.category_name }}">{{ category.category_name | capitalize }}</option>
+                        <option  value="{{ category.category_name }}">{{ category.category_name | capitalize }}</option>
                         {% endfor %}
                     </select>
                     <label class="blue-text text-darken-4" style="font-size: 20px" 
@@ -51,9 +51,9 @@
             <!-- Car year input field  -->
             <div class="row">    
                 <div class="input-field col s12">
-                    <i class="fas fa-calendar-alt red-text text-lighten-2 prefix"></i>
-                    <input id="car_year" name="car_year" minlength="4" maxlength="4" 
-                        type="text" class="validate" required>
+                    <i class="datepicker fas fa-calendar-alt red-text text-lighten-2 prefix"></i>
+                    <input id="car_year" name="car_year" minlength="4" maxlength="4"
+                        type="text" pattern="\d{4,4}" class="validate" required>
                     <label class="blue-text text-darken-4" style="font-size: 20px" 
                         for="car_year">Car Year</label>
                 </div>
@@ -73,7 +73,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-image red-text text-lighten-2 prefix"></i>
                     <input id="car_image_url" name="car_image_url" minlength="8" maxlength="200" 
-                        type="text" class="validate" required>
+                        type="url" class="validate" required>
                     <label class="blue-text text-darken-4" style="font-size: 20px" 
                         for="car_image_url">Car Image URL</label>
                 </div>

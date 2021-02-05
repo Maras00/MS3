@@ -72,6 +72,7 @@ a.brand-logo {
     padding: 10px;
 }
 
+
 @media only screen and (max-width: 1200px) {
      /* -- Search buttons -- */
     .btn-inline .btn {
