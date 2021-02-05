@@ -13,7 +13,6 @@ $(document).ready(function(){
     onCycleTo: null
   });
   
-
 /* Validate code copied from tutorial TaskManagerAuth */
     validateMaterializeSelect();
     function validateMaterializeSelect() {
