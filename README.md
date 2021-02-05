@@ -35,7 +35,8 @@
 ******************************************************************************************************
 ### Project
 
-My main purpose for this website is to catalogue contains information about various vintage car brands. From the most popular to rare, and even those that no longer exist. It’s for all those lovers and followers interested in models and brand, who wants to share their knowledge on a regular basis. It`s name, year, picture, all this information is included in the car catalogue available on the App. And also, to improve the search for a model on the list, which makes it easier to identify.
+My main purpose for this website is to catalogue information about various vintage car makes, from the most popular to rarest, and even those that no longer exist. It’s for all those lovers and followers interested in various models and makes who want to share their knowledge on a regular basis. Name, year of production and picture are all included in the car catalogue available in the app. The aim is to improve the search for a model on the list and make it easier to identify.
+
 
 ### Project Rational
 
@@ -47,7 +48,6 @@ This was developed as both a front-end and backend project. The technologies use
 - Hosting: Heroku
 - Database: MongoDB
 
-
 ## UX
 
 ### User Stories
@@ -55,23 +55,23 @@ This was developed as both a front-end and backend project. The technologies use
 The following user stories have been identified:
 
 1. As a user, I want the home screen to be visually appealing and easy to navigate.
-2. As a user, I want to be able to start register easily.
-2. As a user, I want to be able to start login and logout easily.
+2. As a user, I want to be able to register easily.
+2. As a user, I want to be able to login and logout easily.
 3. As a user, I want to be able to add a car.
 7. As a user, I want to be able to edit a car.
 4. As a user, I want to be able to delete a car.
-5. As a user, I want to be able to search to find the exact car.
+5. As a user, I want to be able to search for the exact car.
 6. As a user, I want to be able to access this website from different devices easily.
 
 ### Design Choices
 
 #### Fonts
 
-- The font that was chosen for this page is "Architects Daughter". Its appearance fits into the vintage style of the site.
+- The font that was chosen for this page is "Architects Daughter". Its appearance matches the vintage style of the site.
 
 #### Colours
 
-- The colours that was chosen for this page are:
+- The colours which were chosen for this page are:
     
     - #80cbc4 - body background
     - purple - logo
@@ -82,11 +82,12 @@ The following user stories have been identified:
     - rgb(82, 82, 136) - car card border
     - rgba(40, 47, 49, 0.8) - text shadow on navbar and footer
 
-Colors are used in different shades of darkness and accents from Materialize colours.
+Used colours are in various shades of darkness and accents from Materialize colours.
+
 
 #### Styling
 
-- The website has been designed to be clear, easy to use and adapted to UI and UX patterns. The site should not be a problem for the user as it is designed in an easy to navigate style. The selected color palette is eye-catching and color-matched to avoid overwhelming the intensity of the shades.
+The website has been designed to be clear, easy to use and adapted to UI and UX patterns. The site should not be a problem for the user as it is designed in an easy to navigate style. The selected colour palette is eye-catching and colour-matched to avoid overwhelming the intensity of the shades.
 
 ##### Back to [Top](#table-of-contents)
 
@@ -94,7 +95,7 @@ Colors are used in different shades of darkness and accents from Materialize col
 
 ### Functionality
 
-This app makes use of Python logic to enable users to login and, or register for an account. 
+This app makes use of Python logic to enable users to login or register for an account. 
 The CRUD features that are available through using Python and Mongodb allow users to create, read, update and delete records in a variety of manners:
 
 - Create car list
@@ -120,7 +121,7 @@ When the user is registered and logged in, the navbar will show 'Profile' and 'A
 
 **Navbar after logged in as user**
 
-The following are the nav bar links when a user is logged in:
+The following are the navbar links when a user is logged in:
 
 - Logo
 - Home
@@ -137,7 +138,7 @@ The following are the nav bar links when a user is logged in:
 - Add Car
 - LogOut
 
-As a Admin you can create, read, edit and delete Categories and Cars.
+As an Admin you can create, read, edit and delete Categories and Cars.
 
 **Home Page** 
 
@@ -149,34 +150,43 @@ The Profile page displays the cars added by the user.
 
 **Register Page**
 
-The Register page displays the form to register by the user or if user already have an account link to Login page.
+The 'Register' page displays the form to register by the user or if user already has an account - link to the 'Login' page.
 
 **Login Page**
 
-The Login page displays the form to login by the user or if user is new to link to Register page.
+The 'Login' page displays the form to login by the user or if user is new to link to 'Register' page.
 
 **Add Car Page**
 
-The Add Car page displays the form to add car by the user.
+The 'Add Car' page displays the form to add a car by the user.
 
 **Categories Page**
 
-The Categories page displays all categories that have been added by Admin. This page can be create, read, edit and delete only by Admin.
+The 'Categories' page displays all categories that have been added by Admin. This page can be created, read, edited and deleted only by Admin.
 
 
 ##### Back to [Top](#table-of-contents)
 
 ## Wireframes
 
-- [Wireframs Home Page](/static/img/wireframe_home_page.png)
-- [Wireframs Category Page](/static/img/wireframe_category_page.png)
-- [Wireframs Register Page](/static/img/wireframe_register_page.png)
-- [Wireframs Login Page](/static/img/wireframe_login_page.png)
-- [Wireframs Profile Page](/static/img/wireframe_profile_page.png)
-- [Wireframs Add Car Page](/static/img/wireframe__add_car_page.png)
-- [Wireframs Edit Car Page](/static/img/wireframe__edit_car_page.png)
-- [Wireframs Add Category Page](/static/img/wireframe__add_category_page.png)
-- [Wireframs Edit Category Page](/static/img/wireframe__edit_category_page.png)
+- [Wirefram Home Page](/static/img/wireframe_home_page.png)
+- [Wirefram Category Page](/static/img/wireframe_category_page.png)
+- [Wirefram Register Page](/static/img/wireframe_register_page.png)
+- [Wirefram Login Page](/static/img/wireframe_login_page.png)
+- [Wirefram Profile Page](/static/img/wireframe_profile_page.png)
+- [Wirefram Add Car Page](/static/img/wireframe__add_car_page.png)
+- [Wirefram Edit Car Page](/static/img/wireframe__edit_car_page.png)
+- [Wirefram Add Category Page](/static/img/wireframe__add_category_page.png)
+- [Wirefram Edit Category Page](/static/img/wireframe__edit_category_page.png)
+- [Wirefram Mobile Home Page](/static/img/wireframe_mobile_home_page.png)
+- [Wirefram Mobile Category Page](/static/img/wireframe_mobile_category_page.png)
+- [Wirefram Mobile Profile Page](/static/img/wireframe_mobile_profile_page.png)
+- [Wirefram Mobile Add Car Page](/static/img/wireframe__mobile_add_car_page.png)
+- [Wirefram Mobile Edit Car Page](/static/img/wireframe__mobile_edit_car_page.png)
+- [Wirefram Mobile Edit Category Page](/static/img/wireframe__mobile_edit_category_page.png)
+- [Wirefram Mobile Add Category Page](/static/img/wireframe__mobile_add_category_page.png)
+- [Wirefram Mobile Login Page](/static/img/wireframe_mobile_login_page.png)
+- [Wirefram Mobile Register Page](/static/img/wireframe_mobile_register_page.png)
 
 ## Database
 
@@ -238,7 +248,8 @@ The project was tested on development tools in Google Chrome, Microsoft Edge and
 
 1. Testing was done on a http://ami.responsivedesign.is/, which has been used to see how the site performs on different devices and their viewports. All pages, links, icons performed as expected on all devices. I also used it to create the all-devices.jpg at the top of this Readme file.
 
-2. Testing was done on my apps responiveness in Chrome and Microsoft Edge on different size mobile, tablet and Desktop to ensure that the responiveness worked and the site is funcitonal at all sizes.
+2. My app’s responsiveness was tested in Chrome and Microsoft Edge on different size mobile, tablet and Desktop to ensure that the responsiveness worked and the site is functional at all sizes.
+
     - Tested on Desktop (My Pc)
     - Tested on Tablet (Ipad 7, Samsung Galaxy 7)
     - Tested on Mobile ( Iphone 7, Samsung A20)
@@ -251,7 +262,7 @@ All problems related to the functioning of the site have been resolved.
 
 ### Functional Testing
 
-In the functionality test, I check that all elements are working properly:
+In the functionality test, I checked that all elements are working properly:
 
 - Logo link
 - Navbar Links
@@ -262,24 +273,27 @@ In the functionality test, I check that all elements are working properly:
 
 ### Additional Testing
 
-For additional testing, I created a few accounts from which I made:
-- Registering
+For additional testing, I created a few accounts from which I performed:
+
+- Registration
 - Login
 - Signing out
 - Adding cars
 - Editing cars
 - Deleting cars
+- Searching cars
 - Adding categories
 - Editing categories
 - Deleting categories
-- Use links in navbar and mobile navbar
+- Using links in navbar and mobile navbar
 
 ### Errors
 
 - The first of the errors that appears from time to time is a "net::ERR_NAME_NOT_RESOLVED" error in profile.html, cars.html and categories.html image replacement
    - onerror="this.onerror=null;this.src='static/img/avatar_car.jpg'", onerror="this.onerror=null;this.src='static/img/avatar_car2.jpg'" 
-- The second error I noticed in the safari browser when you want to choose option in add_car.html and edit_car.html there are two menus to open.
-- The third error was a spelling mistake I made in the env.py file and it did`t work as it should. 
+- The second error I noticed is in the Safari browser - when you want to choose an option in add_car.html and edit_car.html there are two menus to open.
+- The third error was a spelling mistake I made in the env.py file and it didn`t work as it should. 
+
 
 ### Code Validation
 
@@ -364,7 +378,9 @@ To run my code locally, users can download a local copy of my code to their desk
 - The content for the application was created by myself.
 
 ### Media
+
 - The images for cars were copied from [Google Gallery](https://www.google.com/search?q=vintage+car+images&sxsrf=ALeKk00GoLunCwUHYr2qjGQahEIGBgS5uA:1612485434376&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiizZWswNHuAhXtZxUIHUEZCYsQ_AUoAXoECA8QAw&biw=1366&bih=625) 
+- The text for categories was copied from [Google Wikipedia](https://www.wikipedia.org/)
 
 ### Acknowledgements
 
