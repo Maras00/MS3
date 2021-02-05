@@ -1,6 +1,5 @@
 # Vintage Cars
 ![Devices picture](static/img/vintage_cars_responsive.png)
-This application was created for people who like vintage cars and would like to expand their knowledge about other models they have not known yet and share their knowledge and models that are unique by adding to the page.
 
 ******************************************************************************************************
 ## Table of Contents
@@ -24,14 +23,19 @@ This application was created for people who like vintage cars and would like to 
     - [**Responsive Testing**](#responsive-testing)
     - [**Functional Testing**](#functional-testing)
     - [**Code Validation**](#code-validation)
+    - [**Errors**](#errors)
 
 6. [**Deployment**](#deployment)
 
 7. [**Credits**](#credits)
+    - [**Content**](#content)
     - [**Media**](#media)
     - [**Acknowledgments**](#acknowledgments)
 
 ******************************************************************************************************
+### Project
+
+My main purpose for this website is to catalogue contains information about various vintage car brands. From the most popular to rare, and even those that no longer exist. It’s for all those lovers and followers interested in models and brand, who wants to share their knowledge on a regular basis. It`s name, year, picture, all this information is included in the car catalogue available on the App. And also, to improve the search for a model on the list, which makes it easier to identify.
 
 ### Project Rational
 
@@ -256,6 +260,27 @@ In the functionality test, I check that all elements are working properly:
 - Buttons  
 - Flash messages
 
+### Additional Testing
+
+For additional testing, I created a few accounts from which I made:
+- Registering
+- Login
+- Signing out
+- Adding cars
+- Editing cars
+- Deleting cars
+- Adding categories
+- Editing categories
+- Deleting categories
+- Use links in navbar and mobile navbar
+
+### Errors
+
+- The first of the errors that appears from time to time is a "net::ERR_NAME_NOT_RESOLVED" error in profile.html, cars.html and categories.html image replacement
+   - onerror="this.onerror=null;this.src='static/img/avatar_car.jpg'", onerror="this.onerror=null;this.src='static/img/avatar_car2.jpg'" 
+- The second error I noticed in the safari browser when you want to choose option in add_car.html and edit_car.html there are two menus to open.
+- The third error was a spelling mistake I made in the env.py file and it did`t work as it should. 
+
 ### Code Validation
 
 - I used the [W3C HTML Validator tool](https://validator.w3.org/#validate_by_input) to validate my HTML code.
@@ -278,7 +303,7 @@ I used GitHub for my version control and Heroku to host the live version of my p
     ```git remote -v <app-name>```
     ```git remote add <app-name>```
     ```git remote add <link-name>```
-    ```git push -v heroku main```
+    ```git push -u heroku main```
 
 6. Created a requirements.txt file using the following command in the terminal window:
 
@@ -288,9 +313,7 @@ I used GitHub for my version control and Heroku to host the live version of my p
 
     ```echo web: python <fileName.py> > Procfile```
 
-8. Ran the `git push heroku master` command in the terminal window to push the app to Heroku.
-9. Ran the `heroku: ps:scale web=1` command in the terminal window to run the app in Heroku.
-10. Entered the following Config Var in Heroku:
+8. Entered the following Config Var in Heroku:
 
     ```MONGO_URI : <link to MongoDB>```
 
@@ -336,7 +359,7 @@ To run my code locally, users can download a local copy of my code to their desk
 
 ## Credits
 
-## Content
+### Content
 
 - The content for the application was created by myself.
 
@@ -346,6 +369,6 @@ To run my code locally, users can download a local copy of my code to their desk
 ### Acknowledgements
 
 - I received inspiration and help for this project from my mentor and Slack community.
-- I received inspiration for this project from [TaskManagerAuth tutorial](https://github.com/Code-Institute-Solutions/TaskManagerAuth/tree/main/08-SearchingWithinTheDatabase/01-text_index_searching)
-
+- I received inspiration and help for this project from [TaskManagerAuth tutorial](https://github.com/Code-Institute-Solutions/TaskManagerAuth/tree/main/08-SearchingWithinTheDatabase/01-text_index_searching)
+- I got additional help from Stack [Overflow](https://stackoverflow.com/) and [W3 Schools](https://www.w3schools.com/).
 ##### Back to [Top](#table-of-contents)

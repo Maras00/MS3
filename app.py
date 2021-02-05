@@ -17,7 +17,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-
+# main page path 
 @app.route("/")
 @app.route("/get_cars")
 def get_cars():
@@ -25,7 +25,7 @@ def get_cars():
     cars = list(mongo.db.cars.find())
     return render_template("cars.html", cars=cars, categories=categories)
 
-
+# search path
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -38,7 +38,7 @@ def search():
 
     return render_template("cars.html", cars=cars, categories=categories)
 
-
+# register path
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -63,7 +63,7 @@ def register():
 
     return render_template("register.html")
 
-
+# login path
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -92,7 +92,7 @@ def login():
 
     return render_template("login.html")
 
-
+# profile path
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from db
@@ -105,7 +105,7 @@ def profile(username):
 
     return redirect(url_for("login"))
 
-
+# logout path
 @app.route("/logout")
 def logout():
     # remove user from session cookie
@@ -113,7 +113,7 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
-
+# add car path
 @app.route("/add_car", methods=["GET", "POST"])
 def add_car():
     if request.method == "POST":
@@ -136,7 +136,7 @@ def add_car():
     return render_template(
         "add_car.html", username=username, categories=categories)
 
-
+# edit car path
 @app.route("/edit_car/<car_id>", methods=["GET", "POST"])
 def edit_car(car_id):
     if request.method == "POST":
@@ -157,14 +157,14 @@ def edit_car(car_id):
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_car.html", car=car, categories=categories)
 
-
+# delete car path
 @app.route("/delete_car/<car_id>")
 def delete_car(car_id):
     mongo.db.cars.remove({"_id": ObjectId(car_id)})
     flash("Car Successfully Deleted")
     return redirect(url_for("get_cars"))
 
-
+# categories path
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
@@ -173,7 +173,7 @@ def get_categories():
     return render_template(
         "categories.html", categories=categories, username=username)
 
-
+# add category path
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
     if request.method == "POST":
@@ -191,7 +191,7 @@ def add_category():
     
     return render_template("add_category.html")
 
-
+# edit category path
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     if request.method == "POST":
@@ -210,7 +210,7 @@ def edit_category(category_id):
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
     return render_template("edit_category.html", category=category)
 
-
+# delete category path
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
