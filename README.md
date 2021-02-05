@@ -33,6 +33,8 @@
     - [**Acknowledgments**](#acknowledgments)
 
 ******************************************************************************************************
+[Vintage Cars](https://cars-vintage-project.herokuapp.com/)
+
 ### Project
 
 My main purpose for this website is to catalogue information about various vintage car makes, from the most popular to rarest, and even those that no longer exist. It’s for all those lovers and followers interested in various models and makes who want to share their knowledge on a regular basis. Name, year of production and picture are all included in the car catalogue available in the app. The aim is to improve the search for a model on the list and make it easier to identify.
@@ -293,6 +295,8 @@ For additional testing, I created a few accounts from which I performed:
    - onerror="this.onerror=null;this.src='static/img/avatar_car.jpg'", onerror="this.onerror=null;this.src='static/img/avatar_car2.jpg'" 
 - The second error I noticed is in the Safari browser - when you want to choose an option in add_car.html and edit_car.html there are two menus to open.
 - The third error was a spelling mistake I made in the env.py file and it didn`t work as it should. 
+
+ERROR during my last session with my mentor I asked him about the L05  (5.2)  assessment criteria and he told me I need to delete the env.py file which I did and after that I can't open the live preview of the page in Heroku. I tried to fix it for a few hours with no success. I have to submit a project now due to the deadline.
 
 
 ### Code Validation
