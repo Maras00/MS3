@@ -270,12 +270,15 @@ In the functionality test, I check that all elements are working properly:
 I used GitHub for my version control and Heroku to host the live version of my project. To deploy my website to Heroku, I used the following steps:
 
 1. Created the app in Heroku.
-2. Run the `snap install --classic heroku` command in the terminal window to instal heroku in my local workspace.
-3. Ran the `heroku login` command in the terminal window and entered my credentials to login to Heroku.
+2. Run the `npm install heroku` command in the terminal window to instal heroku in my local workspace.
+3. Ran the `heroku login -i` command in the terminal window and entered my credentials to login to Heroku.
 4. Added and committed the files to Git using the `git add .` and `git commit -m ""` commands in the terminal window.
-5. Linked the Heroku app as the remote master branch using the following command in the terminal window:
+5. Linked the Heroku app as the remote main branch using the following command in the terminal window:
 
-    ```heroku git:remote -a <app-name>```
+    ```git remote -v <app-name>```
+    ```git remote add <app-name>```
+    ```git remote add <link-name>```
+    ```git push -v heroku main```
 
 6. Created a requirements.txt file using the following command in the terminal window:
 
@@ -335,13 +338,14 @@ To run my code locally, users can download a local copy of my code to their desk
 
 ## Content
 
+- The content for the application was created by myself.
 
 ### Media
-- The images for cars were copied from [Google Gallery](https://www) 
+- The images for cars were copied from [Google Gallery](https://www.google.com/search?q=vintage+car+images&sxsrf=ALeKk00GoLunCwUHYr2qjGQahEIGBgS5uA:1612485434376&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiizZWswNHuAhXtZxUIHUEZCYsQ_AUoAXoECA8QAw&biw=1366&bih=625) 
 
 ### Acknowledgements
 
 - I received inspiration and help for this project from my mentor and Slack community.
-- I received inspiration for this project from [](https://www) and [ tutorial]()
+- I received inspiration for this project from [TaskManagerAuth tutorial](https://github.com/Code-Institute-Solutions/TaskManagerAuth/tree/main/08-SearchingWithinTheDatabase/01-text_index_searching)
 
 ##### Back to [Top](#table-of-contents)
