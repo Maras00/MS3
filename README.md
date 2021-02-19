@@ -296,8 +296,8 @@ For additional testing, I created a few accounts from which I performed:
 - The second error I noticed is in the Safari browser - when you want to choose an option in add_car.html and edit_car.html there are two menus to open.
 - The third error was a spelling mistake I made in the env.py file and it didn`t work as it should. 
 
-ERROR during my last session with my mentor I asked him about the L05  (5.2)  assessment criteria and he told me I need to delete the env.py file which I did and after that I can't open the live preview of the page in Heroku. I tried to fix it for a few hours with no success. I have to submit a project now due to the deadline.
-
+ERROR During my last session with my mentor I asked him about the L05  (5.2)  assessment criteria and he told me I needed to delete the env.py file, which I did, and after that I can't open the live preview of the page in Heroku. I tried to fix it for a few hours with no success. I have to submit the project now due to the deadline.
+FIX ERROR by the command line window in GitHub, I used config:set to add KEY to MONGO_URI again. The key was the same as before, but previously Heroku could not see it. After the configuration everything started working properly.
 
 ### Code Validation
 
